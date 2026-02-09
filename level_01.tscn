@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://nxbqegwhlggg"]
+
+[ext_resource type="PackedScene" uid="uid://dd2tvfyjw1ice" path="res://plejer.tscn" id="1_bri2l"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jt1vd"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bri2l"]
+size = Vector3(10, 0.2, 10)
+
+[node name="Level_01" type="Node3D" unique_id=823949646]
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1941676619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.069930315, -0.20958471)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1128850612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33035135, -0.021497965, 0.057281494)
+mesh = SubResource("BoxMesh_jt1vd")
+
+[node name="Plejer" parent="Ground/MeshInstance3D" unique_id=1915508237 instance=ExtResource("1_bri2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32559347, 1.0300698, -2.1236837)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=671259752]
+shape = SubResource("BoxShape3D_bri2l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1592217496]
+transform = Transform3D(1, 0, 0, 0, 0.8778576, 0.4789217, 0, -0.4789217, 0.8778576, 0, 7.631677, 7.388833)
+light_color = Color(1, 1, 0, 1)
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 3.881

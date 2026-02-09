@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dd2tvfyjw1ice"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t6t42"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dqiva"]
+size = Vector3(0.5, 0.5, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t6t42"]
+
+[node name="Plejer" type="CharacterBody3D" unique_id=1915508237]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=513124600]
+transform = Transform3D(-0.9990679, 0, -0.043166008, 0, 1, 0, 0.043166008, 0, -0.9990679, 0, 0, 0)
+mesh = SubResource("CylinderMesh_t6t42")
+
+[node name="Glasses" type="MeshInstance3D" parent="Body" unique_id=428554473]
+transform = Transform3D(1.9106853e-15, -4.3711392e-08, 1, -0.9999999, -4.3711392e-08, 0, 4.3711385e-08, -1.0000001, -4.371139e-08, 0, 1, 0.5)
+mesh = SubResource("BoxMesh_dqiva")
+
+[node name="Coliision" type="CollisionShape3D" parent="." unique_id=186723146]
+shape = SubResource("CylinderShape3D_t6t42")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1955584797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5141616, 1.5325954)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=964835486]
+spring_length = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1677569893]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 0, 0)

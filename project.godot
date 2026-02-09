@@ -10,13 +10,14 @@ config_version=5
 
 [application]
 
-config/name="godot1"
+config/name="EngineBasics"
+run/main_scene="uid://nxbqegwhlggg"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="godot1"
+project/assembly_name="EngineBasics"
 
 [physics]
 
